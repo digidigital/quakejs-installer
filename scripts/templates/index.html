@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Webbeben Quakejs Padmap-Server</title>
+		<link rel="stylesheet" href="/game.css"></link>
+		<link rel="manifest" href="/manifest.json"></link>
+
+		<script type="text/javascript" src="/ioquake3.js"></script>
+			<script type="text/javascript">
+			function getQueryCommands() {
+				var search = /([^&=]+)/g;
+				var query  = window.location.search.substring(1);
+
+				var args = [];
+
+				var match;
+				while (match = search.exec(query)) {
+					var val = decodeURIComponent(match[1]);
+					val = val.split(' ');
+					val[0] = '+' + val[0];
+					args.push.apply(args, val);
+				}
+
+				return args;
+			}
+
+			window.onload = function () {
+				function resizeViewport() {
+					if (!ioq3.canvas) {
+						// ignore if the canvas hasn't yet initialized
+						return;
+					}
+					if ((document['webkitFullScreenElement'] || document['webkitFullscreenElement'] ||
+								document['mozFullScreenElement'] || document['mozFullscreenElement'] ||
+								document['fullScreenElement'] || document['fullscreenElement'])) {
+						// ignore resize events due to going fullscreen
+						return;
+					}
+					ioq3.setCanvasSize(ioq3.viewport.offsetWidth, ioq3.viewport.offsetHeight);
+				}
+
+				ioq3.viewport = document.getElementById('viewport-frame');
+				ioq3.elementPointerLock = true;
+				ioq3.exitHandler = function (err) {
+					if (err) {
+						var form = document.createElement('form');
+						form.setAttribute('method', 'POST');
+						form.setAttribute('action', '/');
+
+						var hiddenField = document.createElement('input');
+						hiddenField.setAttribute('type', 'hidden');
+						hiddenField.setAttribute('name', 'error');
+						hiddenField.setAttribute('value', err);
+						form.appendChild(hiddenField);
+
+						document.body.appendChild(form);
+						form.submit();
+						return;
+					}
+
+					window.location.href = '/';
+				}
+
+				window.addEventListener('resize', resizeViewport);
+                               //generate a funny name
+                               function getRandomInt(min, max) {
+					  min = Math.ceil(min);
+					  max = Math.floor(max);
+					  return Math.floor(Math.random() * (max - min +1)) + min; 
+				} 
+
+				var padname;
+				var first = ['Mega', 'Ultra', 'Extremely', 'Sometimes', 'Often', 'Da', 'The', 'One', 'Seldom', 'Never', 'Weekly', 'My', 'Your', 'Not', 'Very', 'Mamas', 'Great', 'Rarely', 'Just', 'Extra', 'Giga', 'Absolutely'];
+				var second = ['Funny', 'Honest', 'Blue', 'Overlord', 'Chaotic', 'Tidy' ,'Unsteady', 'Hiding', 'Hungry', 'Cute', 'Lovely', 'Uncanny', 'Stinky', 'Ch34ting', 'Busy', 'Green', 'N00B' , 'Mouse', 'Launch', 'Popular', 'Lazy', 'Touch', 'Note', 'CrAzY', 'L33T', 'FrEeAkY', 'Bored', 'Satisfied', 'Unnerving', 'Barefoot', 'Serious', 'Big', 'Fat', 'Rich', 'Cool', 'Joking', 'Sneezing', 'Mad', 'Lost', 'Icy', 'Depressed', 'Limping', 'Winning', 'Loosing', 'Dominating', 'Drunk', 'QWERTY', 'Friendly', 'Bored', 'Motivated', 'Active', 'Rising', 'Little', 'Old', 'Young', 'Fresh', 'Aiming', 'Vegan', 'Carnivore', 'Camping', 'Modest', 'Complaining', 'Silent', 'Secret', 'Loud', 'Sniping'];
+				var third = 'Pad';
+
+				padname = '^' + getRandomInt(1, 7) + first[getRandomInt(0, first.length-1)] + '^' + getRandomInt(1, 7) + second[getRandomInt(0, second.length-1)] + '^' + getRandomInt(1, 7) + third; 
+				//select a random playermodel
+				var padmodels =['padman', 'padman/theprock', 'padman/padman3_16', 'padman/cptkork', 'padman/mrspuck','padman/no1','padman/schrottie','padman/overlord', 'padman/the-king'];
+				var playermodel = padmodels [getRandomInt(0, padmodels.length-1)];
+				// merge default args with query string args
+				//var args = ['+set', 'fs_cdn', 'webbeben.de:80', '+connect', '178.254.40.220:27960', '+set', '+model', playermodel, '+name', padname, '+cg_gibs', '0', '+com_blood', '0'];
+var args = ['+set', 'fs_cdn', 'webbeben.de:80', '+connect', '178.254.40.220:27960', '+name', padname, '+cg_gibs', '0', '+com_blood', '0'];
+
+				args.push.apply(args, getQueryCommands());
+				ioq3.callMain(args);
+			};
+		</script>
+	</head>
+	<body>
+		<div id="viewport-frame"></div>
+	</body>
+</html>
