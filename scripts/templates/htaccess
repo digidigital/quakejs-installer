@@ -1,0 +1,2 @@
+SetEnvIf Origin "http(s)?://(.+)$" CORS=$0
+Header always set Access-Control-Allow-Origin %{CORS}e env=CORS
