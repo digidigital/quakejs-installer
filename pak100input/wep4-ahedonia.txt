@@ -1,0 +1,47 @@
+(switch to full-size window, preferably at 1024x786 resolution to have the best reading pleasure)
+
+- Balou and Redlemons present: A Quake III: Arena Grenade Launcher Replacement-
+
+The Ahedonia Grenade Releaser - The Ultimate Devastating Ultra-Deadly Grenade Launcher for Quake III: Arena
+
+
+
+Date: August 18, 2001
+
+
+Description    : The Ahedonia Grenade Releaser is a Quake III: Arena grenade launcher replacement based upon the real-world     M79 Grenade Launcher. A few additions have been made to suit both the Arenas and the ever-increasing fast pace of our world. A comfortable strap has been added to make carrying a breeze. A comfortable rubber trigger has been implemented , which means no more sweaty fingers slipping and missing out on a frag. An ergonomic, large rubber buttstock was created to fit snugly into the shoulder, increasing accuracy and comfort on the battlefield. All in all it's a sweet gun you're holding in your hands. The word 'Ahedonia' means literally 'the absence of pleasure'. For your enemy, that is.
+
+
+The Model    : Polycount - 598 faces - LOD_1 397 faces - LOD_2 323 faces
+             Modeled by Balou. Mesh building time around one week (+ LOD).
+
+
+The Skin    : Created by Redlemons. Main skin is 512x512 resolution, grenade is 64x64 and the metal shell cover is 64x64. 
+          Completed in approximately 1.5 weeks.
+
+
+Additional Notes: If you like the weapon you may want to check out the Phrasia Engine and Hawk-Mk8 both done by Balou and Redlemons. You can find them at http://www.planetquake.com/redlemons in the skins section.
+
+
+How to install the Ahedonia GR  : Unzip the zip file into your Quake III: Arena baseq3 directory, you will then have         the wep4-ahedonia.pk3 and this readme file in your baseq3 folder. Please check to make sure there are no other grenade launcher (wep4) replacements in this folder.
+
+
+How to uninstall the Ahedonia GR: Delete the wep4-ahedonia.pk3 and this readme file from your baseq3 folder.
+
+
+Credits from Balou    : ID for an easy to modify (and great) game, Redlemons for his feedback during the model-building     process and of course for skinning this gl replacement
+
+
+Credits from Redlemons: id Software for Quake III: Arena, Balou for (yet again) creating a fantastic weapon and giving me the opportunity to work on it, the Q3Arena.com and Polycount people, and Mr. Bungle and Alice in Chains for hours and hours and hours of music.
+
+
+How to contact Balou or Redlemons: Balou - Fox16@gmx.net
+                   Redlemons - redlemons@planetquake.com - visit www.planetquake.com/redlemons
+
+
+* Copyrights and Permissions *
+
+Do not alter the files included in this zip-file, this readme file must always be provided with the .PK3 file. If you want to use this weapon-replacement for purposes other than your own enjoyment in Quake please e-mail Balou (Fox16@gmx.net) or Redlemons (redlemons@planetquake.com) first.
+You are not allowed to use this weapon-replacement for commercial purposes.
+QUAKE(R) and QUAKE II(R) and QUAKE III(R) are registered trademarks of id Software, Inc.
+f id Software, Inc.

@@ -1,0 +1,75 @@
+
+                     Balou and Redlemons presents:                    
+               a Quake III: Arena machinegun replacement...
+
+                          The Phrasia Engine
+                        
+May 15, 2001
+---------------------------------------------------------------------------
+The Model: - Created by Balou ( Fox16@gmx.net )
+           - Inspired by the Quake III: Arena shotgun
+           - The primary goal was to make the Phrasia Engine fit into the 
+             world of Quake III:Arena as well as possible
+           - The Phrasia Engine includes LODs at 412, 291, and 220 
+             polygons, plus muzzleflash
+
+The Skin & Sounds: - Created by Redlemons ( rlyss@yahoo.com )
+           - Main texture is 256x256 pixels. The barrel texture is one 
+             128x128 pixel image
+           - 3D Exploration (http://www.righthemisphere.com/3dexploration) 
+             was used as a model viewer
+           - Paint Shop Pro 6 was used to create the textures
+           - Cakewalk Home Studio (http://www.cakewalk.com) and Windows 
+             Sound Recorder were used to create the sounds
+
+---------------------------------------------------------------------------
+Additional Notes: 
+The Phrasia Engine is a Quake III: Arena machinegun replacement. This is 
+our second weapon model for Quake3, with the first being a BFG replacement 
+named the Hawk Mk-8. You can check out the Hawk at:
+
+http://www.planetquake.com/polycount/q3weapons/wep09/hawk-mk8/hawk-mk8.shtml
+
+The Phrasia Engine is the result of just over a month of hard work between 
+Balou and I. This package also contains new sounds, fitting the style of the 
+Phrasia Engine. Enjoy!
+
+---------------------------------------------------------------------------
+How to use it:
+- Place the .pk3 file in your baseq3/ directory. Quake3's machinegun will 
+  automatically be replaced.
+- To uninstall the Phrasia Engine, simply delete the .pk3 from your baseq3/ 
+  directory, and Quake3's machinegun will automatically be used.
+
+---------------------------------------------------------------------------
+
+Credits from Balou:     ID, Redlemons
+
+---------------------------------------------------------------------------
+
+Credits from Redlemons: Balou (obviously) for yet another great project
+            id Software for their fantastic work
+            Ben Folds Five for their excellent music over the years
+            Everyone at Polycount and Q3Arena.com
+
+---------------------------------------------------------------------------
+
+Contact:    
+     Balou: Fox16@gmx.net        
+     Redlemons: rlyss@yahoo.com
+
+Homepages:
+     Balou:     Not yet available
+     Redlemons: http://www.angelfire.com/pq/redlemons  
+   
+
+* Copyright and Permissions *
+
+Do not alter the files included in this zip-file, this readme file must 
+always be provided with the .PK3 file. If you want to use this 
+weapon-replacement for purposes other than your own enjoyment in Quake 
+please e-mail me or Redlemons first. You are not allowed to use this 
+weapon-replacement for commercial purposes.
+
+QUAKE(R) and QUAKE II(R) and QUAKE III(R) 
+are registered trademarks of id Software, Inc.
