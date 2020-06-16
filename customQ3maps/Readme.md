@@ -1,0 +1,1 @@
+Put all your maps here. One pk3 file for each map. The maps will be added to the server.cfg mapcycle. If you have additional resources (e.g. music in a separate pk3) you have to decide whether you want to add that pk3-file to pak100 / pak101 or if you merge the content of the additional pk3 with the maps file so you have just one pk3 (that is the preferred way).
