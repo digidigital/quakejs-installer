@@ -38,6 +38,11 @@ cp /var/www/html/asstes/baseq3/*pak10* ./paks
 
 # create manifest.json
 
+# restart apache service
+service apache2 restart
+
+# start / kill quakejs in order to download content to server
+
 # create baseq3 serverconfig mapcycle
 #if custoMapsOnly =0 include the maps in pak0 in mapcycle
 
@@ -47,7 +52,6 @@ do
 	cp $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/serverconfig.cfg
 done
 
-# restart apache service
-service apache2 restart
 
-#create starter-script
+
+#create starter-script / do not forget to add fs_cdn-parameter!
