@@ -3,5 +3,5 @@ The basic idea is to create sub-folders for each mod. The installer copies the f
 the content server and updates the manifest.
 
 You can create a serverconfig for thr mod in the serverconfigs folder. 
-Name it <modfoldername>.cfg so the installer is able to copy it int the right mod-folder.
+Name it *modfoldername*.cfg so the installer is able to copy it int the right mod-folder.
 It will be renamed to serverconfig.cfg
