@@ -7,6 +7,7 @@ chmod +x ./scripts/*.sh
 #Install basic stuff here
 
 #copy html content for play page
+rm /var/www/html/index.html
 
 #CORS htaccess + rewrite on here
 
