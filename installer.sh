@@ -31,9 +31,20 @@ fi
 #Move maps to html-folder
 cp ./customQ3maps/* /var/www/html/assets/baseq3
 
+
+#Create autoexec.cfg and add it to pak101input
+for userCFG in ./autoexec/*.cfg
+do
+	cat $userCFG >> ./pak101input/autoexec.cfg	
+done
+zip ./pak101input/autoexec.pk3 ./pak101input/autoexec.cfg
+rm -f ./pak101input/autoexec.cfg
+
 #Merge baseq3 paks 100 & 101 (Directly in html-folder) (create backup for future updates)
+
 mkdir ./paks
 cp /var/www/html/asstes/baseq3/*pak10* ./paks 
+
 
 # Calculate checksums and rename in baseq3 / maybe better for all folders in assets!
 
