@@ -10,24 +10,18 @@
 file="$(basename $1)"
 tempName="temp-${file}"
 
-inputDir="/home/quake/quakejs/${file: -10:6}input" 
+inputDir="./${file: -10:6}input" 
 
 #Attempting to copy $file in the current directory...
-cp $1 ./$tempName
+cp $1 ./temp/$tempName
 
 #Fix: non-pk3s cause error messages (but do not interrupt merging process)
-zipmerge $tempName $inputDir/*pk3
+zipmerge ./temp/$tempName $inputDir/*pk3
 
 # Calculating CRC32 checksum... 
 checksum=$((0x$(crc32 $tempName)))
 
 newName="$checksum-${file: -10}"
-filesize="$(stat -c%s $tempName)"
+#filesize="$(stat -c%s $tempName)"
 #Renaming $tempName to $newName
-mv -f $tempName $newName
-
-echo "  {"
-echo "     \"name\": \"baseq3/${file: -10}\","
-echo "     \"compressed\": $filesize,"
-echo "     \"checksum\": $checksum"
-echo "  },"
+mv -f ./temp/$tempName ./temp/$newName
