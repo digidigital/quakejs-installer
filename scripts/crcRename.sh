@@ -20,7 +20,8 @@ for file in "$@"
 do
   if [[ $file =~ ".pk3" ]]; then 
     checksum=$((0x$(crc32 $file)))
-    mv $file "$(dirname $file)/$checksum-$(basename $file)"
+    base=$(basename $file)
+    mv $file "$(dirname $file)/$checksum-${base##*-}" 
   
 # echo 'dirname' $(dirname $file)
   # echo 'basename' $(basename $file) 
