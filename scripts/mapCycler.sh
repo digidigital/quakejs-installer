@@ -5,9 +5,13 @@ echo"//Mapcycle automatically created by install.sh / map-cycler during installa
 mapfile=""
 
 declare -a FILELIST
-for file in /home/quake/quakejs/customQ3maps/*pk3; do 
+for file in $1; do 
    mapfile="$(basename "$file" .pk3)"
-   FILELIST=("${FILELIST[@]}" "$mapfile")
+   mapfile="${mapfile##*-}"
+   if [ $mapfile != "pak100" ] && [ $mapfile != "pak101" ] # ignore pak-files
+   then
+      FILELIST=("${FILELIST[@]}" "$mapfile")
+   fi
 done
 
 #Create mapcycle
