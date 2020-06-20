@@ -33,7 +33,11 @@ printf "Using content server: $server\n"
 #Download manifest.json and get the # of assets available
 printf "Downloading manifest.json\n"
 mkdir -p "$output_dir/assets"
-wget --quiet --show-progress --continue --no-clobber -O "$output_dir/assets/manifest.json" "$server/assets/manifest.json"
+#debug
+echo "Downloading assets from $server/assets/manifest.json"
+echo "Downloading assets to $output_dir/assets/manifest.json"
+#debug
+wget --show-progress --continue --no-clobber -O "$output_dir/assets/manifest.json" "$server/assets/manifest.json"
 num_elems=$(jq '. | length' "$output_dir/assets/manifest.json")
 #manifest="$(wget --quiet --show-progress --continue --no-clobber -O $server/assets/manifest.json)"
 #num_elems=$(echo "$manifest" | jq '. | length')
