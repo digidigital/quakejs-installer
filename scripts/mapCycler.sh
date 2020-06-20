@@ -1,5 +1,5 @@
 #!/bin/bash
-echo"//Mapcycle automatically created by install.sh / map-cycler during installation"
+echo "//Mapcycle automatically created by install.sh / map-cycler during installation"
 
 #Read directory customQ3maps in an Array
 mapfile=""
@@ -8,7 +8,7 @@ declare -a FILELIST
 for file in "$@"; do 
    mapfile="$(basename "$file" .pk3)"
    mapfile="${mapfile##*-}"
-   if [ $mapfile != "pak100" ] && [ $mapfile != "pak101" ] # ignore pak-files
+   if [ "$mapfile" != "pak100" ] && [ "$mapfile" != "pak101" ] # ignore pak-files
    then
       FILELIST=("${FILELIST[@]}" "$mapfile")
    fi
