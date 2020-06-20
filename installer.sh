@@ -111,7 +111,8 @@ mv -f ./temp/manifest.tmp /var/www/html/assets/manifest.json
 service apache2 restart
 
 #Add parameters, create mapcycles and copy serverconfigs in mod folders
-for serverconfig in ./serverconfigs/*.cfg
+cp ./serverconfigs/*.cfg ./temp
+for serverconfig in ./temp/*.cfg
 do
         echo "seta bot_enable 1" >> $serverconfig
         echo "seta bot_minPlayers $bots" >> $serverconfig
@@ -120,7 +121,7 @@ do
 	echo "seta rconpassword \"$rconPassword\"" >> $serverconfig
 	# create mapcycles TODO: if custoMapsOnly =0 include the maps in pak0 in mapcycle
 	./scripts/mapCycler.sh /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3 >> $serverconfig
-	cp $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/server.cfg
+	mv -f $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/server.cfg
 done
 
 chown -R $createUser:$createUser /home/$createUser/*
