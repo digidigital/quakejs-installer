@@ -1,7 +1,9 @@
 #!/bin/sh
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 chmod +x ./scripts/*.sh
 #Read config here
-source ./installerconfig.cfg
+. ./installerconfig.cfg
+
 
 apt-get install sudo curl git nodejs npm jq apache2 wget apt-utils gosu libarchive-zip-perl zipmerge bash -y
 
@@ -11,6 +13,7 @@ useradd -ms /bin/bash "$createUser"
 
 cd /home/$createUser/ && git clone --recurse-submodules https://github.com/begleysm/quakejs.git
 
+cd $DIR
 cp ./scripts/ioq3ded.fixed.js /home/$createUser/quakejs/build/ioq3ded.js
 
 cd /home/$createUser/quakejs && npm install
@@ -29,12 +32,12 @@ sed -i "s/CONTENTSERVER/${contentServer}/g" /var/www/html/index.html
 sed -i "s/SERVERIP/${serverAddress}/g" /var/www/html/index.html
 sed -i "s/SERVERPORT/${serverPort}/g" /var/www/html/index.html
 
-if [ funnyNames == 0 ]
+if [ $funnyNames = 0 ]
 then
 	sed -i "s/, '+set', 'name', playername//g" /var/www/html/index.html
 fi
 
-if [ randomModels == 0 ]
+if [ $randomModels = 0 ]
 then
 	sed -i "s/, '+set', 'model', playermodel//g" /var/www/html/index.html
 fi
@@ -53,7 +56,7 @@ cp -f ./scripts/templates/htaccess /var/www/html/.htaccess
 echo "127.0.0.1 content.quakejs.com" >> /etc/hosts
 
 #Delete the downloaded Q3A maps? 
-if [ $customMapsOnly == 1 ]
+if [ $customMapsOnly = 1 ]
   then 
   find /var/www/html/asstes/baseq3 -type f -not -name '*pak10*' -print0 | xargs -0 -I {} rm {}
 fi
@@ -63,14 +66,13 @@ fi
 #################
 
 #Has the user defined custom downloads? 
-if [ $downloadLists == 1 ]
+if [ $downloadLists = 1 ]
   then 
   ./scripts/downloader.sh
 fi
 
 #Copy maps to html-folder
 cp ./customQ3maps/*.pk3 /var/www/html/assets/baseq3/
-
 
 #Create autoexec.cfg and add it to pak101input
 for userCFG in ./autoexec/*.cfg
