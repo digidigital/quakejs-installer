@@ -19,7 +19,7 @@ cp $1 ./temp/$tempName
 zipmerge ./temp/$tempName $inputDir/*pk3
 
 # Calculating CRC32 checksum... 
-checksum=$((0x$(crc32 $tempName)))
+checksum=$((0x$(crc32 ./temp/$tempName)))
 
 newName="$checksum-${file: -10}"
 #filesize="$(stat -c%s $tempName)"
