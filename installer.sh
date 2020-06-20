@@ -75,7 +75,7 @@ cp -f ./scripts/templates/htaccess /var/www/html/.htaccess
 ./scripts/get_assets.sh /var/www/html $sourceServer
 
 # Not sure if we need this line since we now set fs_cdn as a parameter when starting the server... 
-echo "127.0.0.1 content.quakejs.com" >> /etc/hosts
+# echo "127.0.0.1 content.quakejs.com" >> /etc/hosts
 
 #Delete the downloaded Q3A maps? 
 if [ $customMapsOnly = 1 ]
