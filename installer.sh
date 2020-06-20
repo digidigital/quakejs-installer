@@ -120,9 +120,12 @@ do
 	echo "seta rconpassword \"$rconPassword\"" >> $serverconfig
 	# create mapcycles TODO: if custoMapsOnly =0 include the maps in pak0 in mapcycle
 	./scripts/mapCycler.sh /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3 >> $serverconfig
-	cp $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/$serverconfig.cfg
+	cp $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/server.cfg
 done
 
 chown -R $createUser:$createUser /home/$createUser/*
 
-#create starter-script / do not forget to add fs_cdn-parameter!
+#create start-script
+echo "#!/bin/bash" > /home/$createUser/quakejs/startscript.sh
+echo "node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown" >> > /home/$createUser/quakejs/startscript.sh
+chmod +x /home/$createUser/quakejs/startscript.sh
