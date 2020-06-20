@@ -1,5 +1,10 @@
 #!/bin/sh
-if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root (with sudo) since we need to install some tools with apt, create a new user and adjust the files in the Apache html folder..." ; exit 1 ; fi
+if [ $(id -u) -ne 0 ] 
+then 
+	echo "Please run as root (with sudo) since we need to install some tools with apt, create a new user and adjust the files in the Apache html folder..." 
+	exit 1 
+fi
+echo "userID: $(id -u)"
 DIR="$(pwd)"
 chmod +x ./scripts/*.sh
 #Read config here
