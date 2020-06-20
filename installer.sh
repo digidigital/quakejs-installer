@@ -72,7 +72,7 @@ cp -f ./scripts/templates/htaccess /var/www/html/.htaccess
 #funny names, random models, and server info for index.hml here 
 
 #Get assets from quakejs-content server
-./scripts/get_assets.sh /var/www/html/assets $sourceServer
+./scripts/get_assets.sh /var/www/html/ $sourceServer
 
 # Not sure if we need this line since we now set fs_cdn as a parameter when starting the server... 
 echo "127.0.0.1 content.quakejs.com" >> /etc/hosts
