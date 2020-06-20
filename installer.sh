@@ -67,7 +67,7 @@ cp -f ./scripts/templates/htaccess /var/www/html/.htaccess
 #funny names, random models, and server info for index.hml here 
 
 #Get assets from quakejs-content server
-./scrips/get_assets.sh /var/www/html/assets $sourceServer
+./scripts/get_assets.sh /var/www/html/assets $sourceServer
 
 # Not sure if we need this line since we now set fs_cdn as a parameter when starting the server... 
 echo "127.0.0.1 content.quakejs.com" >> /etc/hosts
@@ -75,7 +75,7 @@ echo "127.0.0.1 content.quakejs.com" >> /etc/hosts
 #Delete the downloaded Q3A maps? 
 if [ $customMapsOnly = 1 ]
   then 
-  find /var/www/html/asstes/baseq3 -type f -not -name '*pak10*' -print0 | xargs -0 -I {} rm {}
+  find /var/www/html/assets/baseq3 -type f -not -name '*pak10*' -print0 | xargs -0 -I {} rm {}
 fi
 
 #################
@@ -107,7 +107,7 @@ rm -f ./pak101input/autoexec.cfg
 #Merge baseq3 paks 100 & 101 (Directly in html-folder) (create backup for future updates)
 mkdir ./paks
 mkdir ./temp
-cp /var/www/html/asstes/baseq3/*pak10* ./paks 
+cp /var/www/html/assets/baseq3/*pak10* ./paks 
 
 ./scripts/mergeScript2.sh ./paks/*pak100.pk3 
 ./scripts/mergeScript2.sh ./paks/*pak101.pk3 
