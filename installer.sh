@@ -21,21 +21,33 @@ cd /home/$createUser/quakejs && npm install
 cp /home/$createUser/quakejs/html/* /var/www/html/
 
 #copy html content for play page
-cp ./scripts/templates/index.html /var/www/html/
+cp -f ./scripts/templates/index.html /var/www/html/
 
-#####TODO######
 #Customize Playpage
-###########################################################################
+sed -i "s/SERVERTITLE/${serverTitle}/g" /var/www/html/index.html
+sed -i "s/CONTENTSERVER/${contentServer}/g" /var/www/html/index.html
+sed -i "s/SERVERIP/${serverAddress}/g" /var/www/html/index.html
+sed -i "s/SERVERPORT/${serverPort}/g" /var/www/html/index.html
+
+if [ funnyNames == 0 ]
+then
+	sed -i "s/, '+set', 'name', playername//g" /var/www/html/index.html
+fi
+
+if [ randomModels == 0 ]
+then
+	sed -i "s/, '+set', 'model', playermodel//g" /var/www/html/index.html
+fi
 
 #CORS htaccess + rewrite on here
 a2enmod rewrite
 a2enmod headers
-./scripts/templates/htaccess /var/www/html/.htaccess
+cp -f ./scripts/templates/htaccess /var/www/html/.htaccess
 
 #funny names, random models, and server info for index.hml here 
 
 #Get assets from quakejs-content server
-./scrips/get_assets.sh /var/www/html/assets "$sourceServer"
+./scrips/get_assets.sh /var/www/html/assets $sourceServer
 
 # Not sure if we need this line since we now set fs_cdn as a parameter when starting the server... 
 echo "127.0.0.1 content.quakejs.com" >> /etc/hosts
@@ -89,7 +101,7 @@ echo "Moving new paks to assets folder"
 mv -f ./temp/*pk3 /var/www/html/assets/baseq3/ 
 rm -f ./temp/*
 
-# Calculate checksums and rename all files in the asssets folders!
+# Calculate checksums and rename all files in the assets folders!
 for folder in $(ls -d /var/www/html/assets/*/)
 do
 	./scripts/crcRename.sh "/var/www/html/assets/$folder/*.pk3"
@@ -119,6 +131,7 @@ do
 	echo "seta cg_gibs $gore" >> $serverconfig
 	echo "seta com_blood $gore" >> $serverconfig
 	echo "seta rconpassword \"$rconPassword\"" >> $serverconfig
+	echo "seta g_motd \"$motd\"" >> $serverconfig
 	# create mapcycles TODO: if custoMapsOnly =0 include the maps in pak0 in mapcycle
 	./scripts/mapCycler.sh /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3 >> $serverconfig
 	mv -f $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/server.cfg
@@ -128,5 +141,7 @@ chown -R $createUser:$createUser /home/$createUser/*
 
 #create start-script
 echo "#!/bin/bash" > /home/$createUser/quakejs/startscript.sh
-echo "node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown" >> > /home/$createUser/quakejs/startscript.sh
+echo "su - quake -c \"node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> > /home/$createUser/quakejs/startscript.sh
 chmod +x /home/$createUser/quakejs/startscript.sh
+
+echo "If there was no error your server should be ready ;)"
