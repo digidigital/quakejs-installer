@@ -1,5 +1,6 @@
 #!/bin/sh
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root (with sudo) since we need to install some tools with apt, create a new user and adjust the files in the Apache html folder..." ; exit 1 ; fi
+DIR="$(pwd)"
 chmod +x ./scripts/*.sh
 #Read config here
 . ./installerconfig.cfg
@@ -39,6 +40,7 @@ cd /home/$createUser/quakejs && npm install
 cp /home/$createUser/quakejs/html/* /var/www/html/
 
 #copy html content for play page
+cd $DIR
 cp -f ./scripts/templates/index.html /var/www/html/
 
 #Customize Playpage
@@ -94,7 +96,7 @@ for userCFG in ./autoexec/*.cfg
 do
 	cat $userCFG >> ./pak101input/autoexec.cfg	
 done
-if [ $rconPasswordForAll == 1 ]
+if [ $rconPasswordForAll = 1 ]
 	then
 	echo "seta rconpassword \"$rconPassword\"" >> ./pak101input/autoexec.cfg
 fi	
@@ -158,7 +160,7 @@ chown -R $createUser:$createUser /home/$createUser/*
 
 #create start-script
 echo "#!/bin/bash" > /home/$createUser/quakejs/startscript.sh
-echo "su - $createUser -c \"node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> > /home/$createUser/quakejs/startscript.sh
+echo "su - quake -c \"node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> > /home/$createUser/quakejs/startscript.sh
 chmod +x /home/$createUser/quakejs/startscript.sh
 
 echo "If there was no error your server should be ready ;)"
