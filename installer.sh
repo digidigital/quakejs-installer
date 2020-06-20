@@ -4,7 +4,22 @@ chmod +x ./scripts/*.sh
 #Read config here
 . ./installerconfig.cfg
 
-
+###dpkg-lock-check loop from https://askubuntu.com/questions/132059/how-to-make-a-package-manager-wait-if-another-instance-of-apt-is-running
+i=0
+tput sc
+while fuser /var/lib/dpkg/lock >/dev/null 2>&1 ; do
+    case $(($i % 4)) in
+        0 ) j="-" ;;
+        1 ) j="\\" ;;
+        2 ) j="|" ;;
+        3 ) j="/" ;;
+    esac
+    tput rc
+    echo -en "\r[$j] Waiting for other software managers to finish..." 
+    sleep 0.5
+    ((i=i+1))
+done 
+###
 apt-get install sudo curl git nodejs npm jq apache2 wget apt-utils gosu libarchive-zip-perl zipmerge bash -y
 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
