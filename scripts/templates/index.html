@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Webbeben Quakejs Padmap-Server</title>
+		<title>SERVERTITLE</title>
 		<link rel="stylesheet" href="/game.css"></link>
 		<link rel="manifest" href="/manifest.json"></link>
 
@@ -69,18 +69,16 @@
 					  return Math.floor(Math.random() * (max - min +1)) + min; 
 				} 
 
-				var padname;
-				var first = ['Mega', 'Ultra', 'Extremely', 'Sometimes', 'Often', 'Da', 'The', 'One', 'Seldom', 'Never', 'Weekly', 'My', 'Your', 'Not', 'Very', 'Mamas', 'Great', 'Rarely', 'Just', 'Extra', 'Giga', 'Absolutely'];
-				var second = ['Funny', 'Honest', 'Blue', 'Overlord', 'Chaotic', 'Tidy' ,'Unsteady', 'Hiding', 'Hungry', 'Cute', 'Lovely', 'Uncanny', 'Stinky', 'Ch34ting', 'Busy', 'Green', 'N00B' , 'Mouse', 'Launch', 'Popular', 'Lazy', 'Touch', 'Note', 'CrAzY', 'L33T', 'FrEeAkY', 'Bored', 'Satisfied', 'Unnerving', 'Barefoot', 'Serious', 'Big', 'Fat', 'Rich', 'Cool', 'Joking', 'Sneezing', 'Mad', 'Lost', 'Icy', 'Depressed', 'Limping', 'Winning', 'Loosing', 'Dominating', 'Drunk', 'QWERTY', 'Friendly', 'Bored', 'Motivated', 'Active', 'Rising', 'Little', 'Old', 'Young', 'Fresh', 'Aiming', 'Vegan', 'Carnivore', 'Camping', 'Modest', 'Complaining', 'Silent', 'Secret', 'Loud', 'Sniping'];
-				var third = 'Pad';
-
-				padname = '^' + getRandomInt(1, 7) + first[getRandomInt(0, first.length-1)] + '^' + getRandomInt(1, 7) + second[getRandomInt(0, second.length-1)] + '^' + getRandomInt(1, 7) + third; 
+				var playername;
+				var first = ['Mega', 'Ultra', 'Extreme', 'Some', '[N0cl4n]', 'Da', 'Depressed' 'The', 'One', 'Hiding', 'Vegan', 'Never', 'My', 'Your', 'No', 'Best', 'Largest' , 'Heavy' , 'Broke' 'Breathing', 'Dead' , 'Super' , 'Mamas', 'Great', '8-BIT' , 'Just', 'Bloody', 'Extra', 'Secret', 'Giga', 'Absolute', 'Silver', 'Rich', 'Cool' , '-=LOL=-', 'Bored' , 'Laughing' ,  'Popular', 'Motivated', 'Active', 'Rising', 'Complaining',  'Little', 'Old', 'CallMe', 'Young', 'Fresh', 'Aiming', 'Loud', 'Sniping', 'Friendly', 'Lazy', 'CrAzY', 'L33T', 'FrEeAkY', 'Bored', 'Rich', 'Cool', 'Joking', 'Sneezing', 'Mad', 'Lost', 'Icy', 'Depressed', 'Limping', 'Happy', 'Winning', 'Loosing', 'Dominating', 'Drunk', ];
+				var second = ['Cl0wn', '1337', 'D0G', 'HunteR', 'Bee', 'Winner', 'Byte' , 'Daddy', 'Overlord', 'Carnivore', 'Player', 'King', 'Bear' ,'D0minat0r', 'Pal', 'Cat', 'Looser','Donkey', 'C4mper', 'Cute', 'Guy', 'Waste', 'Rock', 'Witch', 'Killer', 'Beast', 'Hangman', 'Executioner', 'Judge',  'Liar', 'Her0',  'Ch34ter', 'Busy', 'Green', 'N00B' , 'Mouse', 'Bullet', 'PitBull' , 'General', 'QWERTY', 'Butcher', 'Vegan', 'Guard', 'Major', 'Agent', 'Soldier', 'Gun', 'B0SS' ];
+				playername = '^' + getRandomInt(1, 7) + first[getRandomInt(0, first.length-1)] + '^' + getRandomInt(1, 7) + second[getRandomInt(0, second.length-1)]; 
 				//select a random playermodel
-				var padmodels =['padman', 'padman/theprock', 'padman/padman3_16', 'padman/cptkork', 'padman/mrspuck','padman/no1','padman/schrottie','padman/overlord', 'padman/the-king'];
-				var playermodel = padmodels [getRandomInt(0, padmodels.length-1)];
+				var models =['sarge', 'visor', 'visor/red', 'visor/blue', 'major','major/daemia','grunt'];
+				var playermodel = models [getRandomInt(0, models.length-1)];
 				// merge default args with query string args
 				//var args = ['+set', 'fs_cdn', 'webbeben.de:80', '+connect', '178.254.40.220:27960', '+set', '+model', playermodel, '+name', padname, '+cg_gibs', '0', '+com_blood', '0'];
-var args = ['+set', 'fs_cdn', 'webbeben.de:80', '+connect', '178.254.40.220:27960', '+name', padname, '+cg_gibs', '0', '+com_blood', '0'];
+				var args = ['+set', 'fs_cdn', 'CONTENTSERVER', '+connect', 'SERVERIP:SERVERPORT', '+set', 'name', playername, '+set', 'model', playermodel];
 
 				args.push.apply(args, getQueryCommands());
 				ioq3.callMain(args);
