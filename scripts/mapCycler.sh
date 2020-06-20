@@ -5,7 +5,7 @@ echo"//Mapcycle automatically created by install.sh / map-cycler during installa
 mapfile=""
 
 declare -a FILELIST
-for file in $1; do 
+for file in "$@"; do 
    mapfile="$(basename "$file" .pk3)"
    mapfile="${mapfile##*-}"
    if [ $mapfile != "pak100" ] && [ $mapfile != "pak101" ] # ignore pak-files
