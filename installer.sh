@@ -11,6 +11,8 @@ useradd -ms /bin/bash "$createUser"
 
 cd /home/$createUser/ && git clone --recurse-submodules https://github.com/begleysm/quakejs.git
 
+cp ./scripts/ioq3ded.fixed.js /home/$createUser/quakejs/build/ioq3ded.js
+
 cd /home/$createUser/quakejs && npm install
 
 ########################
@@ -20,6 +22,10 @@ cp /home/$createUser/quakejs/html/* /var/www/html/
 
 #copy html content for play page
 cp ./scripts/templates/index.html /var/www/html/
+
+#####TODO######
+#Customize Playpage
+###########################################################################
 
 #CORS htaccess + rewrite on here
 a2enmod rewrite
@@ -44,16 +50,14 @@ fi
 # Customization #
 #################
 
-cp ./scripts/templates/ioq3ded.fixed.js /home/$createUser/quakejs/build/ioq3ded.js
-
 #Has the user defined custom downloads? 
 if [ $downloadLists == 1 ]
   then 
   ./scripts/downloader.sh
 fi
 
-#Move maps to html-folder
-cp ./customQ3maps/* /var/www/html/assets/baseq3
+#Copy maps to html-folder
+cp ./customQ3maps/*.pk3 /var/www/html/assets/baseq3/
 
 
 #Create autoexec.cfg and add it to pak101input
@@ -70,29 +74,53 @@ zip ./pak101input/autoexec.pk3 ./pak101input/autoexec.cfg
 rm -f ./pak101input/autoexec.cfg
 
 #Merge baseq3 paks 100 & 101 (Directly in html-folder) (create backup for future updates)
-
 mkdir ./paks
+mkdir ./temp
 cp /var/www/html/asstes/baseq3/*pak10* ./paks 
 
+./scripts/mergeScript2.sh ./paks/*pak100.pk3 
+./scripts/mergeScript2.sh ./paks/*pak101.pk3 
 
-# Calculate checksums and rename in baseq3 / maybe better for all folders in assets!
+echo "Deleting original paks in assets folder"
+rm -f /var/www/html/assets/baseq3/*pak100.pk3
+rm -f /var/www/html/assets/baseq3/*pak101.pk3
+
+echo "Moving new paks to assets folder"
+mv -f ./temp/*pk3 /var/www/html/assets/baseq3/ 
+rm -f ./temp/*
+
+# Calculate checksums and rename all files in the asssets folders!
+for folder in $(ls -d /var/www/html/assets/*/)
+do
+	./scripts/crcRename.sh "/var/www/html/assets/$folder/*.pk3"
+done
 
 # create manifest.json
+cp ./scripts/templates/manifest.json ./temp/manifest.tmp
+for folder in $(ls -d /var/www/html/assets/*/)
+do
+	for file in $(ls -d "/var/www/html/assets/$folder/.pk3")
+	do
+	   ./scripts/manifestor.sh "$file" >> ./temp/manifest.tmp
+	done
+done
+echo "]" >> ./temp/manifest.tmp
+mv -f ./temp/manifest.tmp /var/www/html/assets/manifest.json
 
 # restart apache service
 service apache2 restart
 
-# create baseq3 serverconfig mapcycle
-#if custoMapsOnly =0 include the maps in pak0 in mapcycle
-
-#copy serverconfigs in mod folders
+#Add parameters, create mapcycles and copy serverconfigs in mod folders
 for serverconfig in ./serverconfigs/*.cfg
 do
         echo "seta bot_enable 1" >> $serverconfig
         echo "seta bot_minPlayers $bots" >> $serverconfig
 	echo "seta cg_gibs $gore" >> $serverconfig
 	echo "seta com_blood $gore" >> $serverconfig
-	cp $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/serverconfig.cfg
+	echo "seta rconpassword \"$rconPassword\"" >> $serverconfig
+	# create mapcycles TODO: if custoMapsOnly =0 include the maps in pak0 in mapcycle
+	./scripts/mapCycler.sh /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3 >> $serverconfig
+	cp $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/$serverconfig.cfg
 done
 
 chown -R $createUser:$createUser /home/$createUser/*
