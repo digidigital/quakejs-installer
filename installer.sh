@@ -160,7 +160,7 @@ do
 	echo "seta rconpassword \"$rconPassword\"" >> $serverconfig
 	echo "seta g_motd \"$motd\"" >> $serverconfig
 	# create mapcycles TODO: if custoMapsOnly =0 include the maps in pak0 in mapcycle
-	./scripts/mapCycler.sh /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3 >> $serverconfig
+	./scripts/mapCycler.sh $(ls /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3) >> $serverconfig
 	mv -f $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/server.cfg
 done
 
