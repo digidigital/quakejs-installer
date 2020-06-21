@@ -14,10 +14,10 @@
   folders="$(dirname $file)"
   modfolder="${folders##*/}"
   
-  echo "  {"
+  echo "  ,{"
   echo "     \"name\": \"${modfolder}/${basefile}\","
   echo "     \"compressed\": $filesize,"
   echo "     \"checksum\": $checksum"
-  echo "  },"
+  echo "  }"
   
 
