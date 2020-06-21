@@ -173,7 +173,8 @@ chown -R $createUser:$createUser /home/$createUser/*
 
 #create start-script
 echo "#!/bin/bash" > /home/$createUser/quakejs/startscript.sh
-echo "su - quake -c \"cd ~/quakejs && node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> /home/$createUser/quakejs/startscript.sh
+echo "su - quake -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $serverPort +set net_ip $serverAddress +set com_hunkMegs 192 +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> /home/$createUser/quakejs/startscript.sh
+
 chmod +x /home/$createUser/quakejs/startscript.sh
 
 echo "If there was no error your server should be ready ;)"
