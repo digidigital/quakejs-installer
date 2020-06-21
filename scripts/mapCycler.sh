@@ -19,7 +19,7 @@ vstr=1
 nextvstr=1
 
 #Loop over items and create mapcycle lines
-for mapname in ${#FILELIST[@]}
+for mapname in ${"FILELIST[@]"}
 do
   
   if [ $vstr -eq ${#FILELIST[@]} ] 
