@@ -159,6 +159,11 @@ do
 	echo "seta com_blood $gore" >> $serverconfig
 	echo "seta rconpassword \"$rconPassword\"" >> $serverconfig
 	echo "seta g_motd \"$motd\"" >> $serverconfig
+	echo "seta g_gametype $gametype" >> $serverconfig
+	echo "seta timelimit $timelimit" >> $serverconfig
+	echo "seta fraglimit $fraglimit" >> $serverconfig
+	echo "seta sv_hostname \"$hostname\"" >> $serverconfig
+	echo "seta sv_maxclients $maxclients" >> $serverconfig
 	# create mapcycles TODO: if custoMapsOnly =0 include the maps in pak0 in mapcycle
 	./scripts/mapCycler.sh $(ls /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3) >> $serverconfig
 	mv -f $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/server.cfg
