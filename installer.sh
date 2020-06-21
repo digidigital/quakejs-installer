@@ -128,14 +128,14 @@ rm -f ./temp/*
 # Calculate checksums and rename all files in the assets folders!
 for folder in $(ls -d /var/www/html/assets/*/)
 do
-	./scripts/crcRename.sh "/var/www/html/assets/$folder/*.pk3"
+	./scripts/crcRename.sh "$folder*.pk3"
 done
 
 # create manifest.json
 cp ./scripts/templates/manifest.json ./temp/manifest.tmp
 for folder in $(ls -d /var/www/html/assets/*/)
 do
-	for file in $(ls -d "/var/www/html/assets/$folder/.pk3")
+	for file in $(ls -d "$folder*.pk3")
 	do
 	   ./scripts/manifestor.sh "$file" >> ./temp/manifest.tmp
 	done
