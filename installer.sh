@@ -56,12 +56,12 @@ sed -i "s/SERVERPORT/${serverPort}/g" /var/www/html/index.html
 
 if [ $funnyNames = 0 ]
 then
-	sed -i "s/, '+set', 'name', playername//g" /var/www/html/index.html
+	sed -i "s/, '+name', playername//g" /var/www/html/index.html
 fi
 
 if [ $randomModels = 0 ]
 then
-	sed -i "s/, '+set', 'model', playermodel//g" /var/www/html/index.html
+	sed -i "s/, '+model', playermodel//g" /var/www/html/index.html
 fi
 
 #CORS htaccess + rewrite on here
