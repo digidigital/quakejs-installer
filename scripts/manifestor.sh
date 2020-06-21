@@ -11,7 +11,7 @@
   #Name of the map-file
   filename="$(basename $file)"
   basefile="${filename##*-}"
-  folders="$(dirname $filename)"
+  folders="$(dirname $file)"
   modfolder="${folders##*/}"
   
   echo "  {"
