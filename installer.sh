@@ -49,7 +49,7 @@ cd $DIR
 cp -f ./scripts/templates/index.html /var/www/html/
 
 #Customize Playpage
-sed -i "s/SERVERTITLE/${serverTitle}/g" /var/www/html/index.html
+sed -i "s/SERVERTITLE/${serverTitle}/g" /var/www/html/index.html, 'Depressed', 'The', 'One', 'Hiding', 'Vegan', 'Never', 'My', 'Your', 'No', 'Best', 'Largest' , 'Heavy' , 'Broke', 'Breathing', 'Dead' , 'Super' , 'Mamas', 'Great', '8-B
 sed -i "s/CONTENTSERVER/${contentServer}/g" /var/www/html/index.html
 sed -i "s/SERVERIP/${serverAddress}/g" /var/www/html/index.html
 sed -i "s/SERVERPORT/${serverPort}/g" /var/www/html/index.html
@@ -168,7 +168,7 @@ chown -R $createUser:$createUser /home/$createUser/*
 
 #create start-script
 echo "#!/bin/bash" > /home/$createUser/quakejs/startscript.sh
-echo "su - quake -c \"node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> /home/$createUser/quakejs/startscript.sh
+echo "su - quake -c \"cd ~/quakejs && node build/ioq3ded.js +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> /home/$createUser/quakejs/startscript.sh
 chmod +x /home/$createUser/quakejs/startscript.sh
 
 echo "If there was no error your server should be ready ;)"
