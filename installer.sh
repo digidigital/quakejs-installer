@@ -26,7 +26,7 @@ while fuser /var/lib/dpkg/lock >/dev/null 2>&1 ; do
     ((i=i+1))
 done 
 ###
-apt-get install sudo curl git nodejs npm jq apache2 wget apt-utils gosu libarchive-zip-perl zipmerge bash -y
+apt-get install sudo curl git nodejs npm jq apache2 wget apt-utils screen libarchive-zip-perl zipmerge bash -y
 
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
