@@ -78,7 +78,7 @@
 				var playermodel = models [getRandomInt(0, models.length-1)];
 				// merge default args with query string args
 				
-				var args = ['+set', 'fs_cdn', 'CONTENTSERVER', '+connect', 'SERVERIP:SERVERPORT', '+name', playername, '+model', playermodel];
+				var args = ['+set', 'fs_cdn', 'CONTENTSERVER', '+connect', 'SERVERIP:SERVERPORT', '+exec', '/scripts/default.txt', '+name', playername, '+model', playermodel];
 
 				args.push.apply(args, getQueryCommands());
 				ioq3.callMain(args);
