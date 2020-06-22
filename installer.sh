@@ -86,7 +86,7 @@ nan
 #################
 # Customization #
 #################
-
+mkdir ./temp
 #Has the user defined custom downloads? 
 if [ $downloadLists = 1 ]
   then 
@@ -97,21 +97,25 @@ fi
 cp ./customQ3maps/*.pk3 /var/www/html/assets/baseq3/
 
 #Create autoexec.cfg and add it to pak101input
-for userCFG in ./autoexec/*.cfg
+cd ./temp
+mkdir ./scripts
+for userCFG in ../autoexec/*.cfg
 do
-	cat $userCFG >> ./pak101input/autoexec.cfg	
+	cat $userCFG >> ./scripts/default.txt	
 done
 if [ $rconPasswordForAll = 1 ]
 	then
-	echo "seta rconpassword \"$rconPassword\"" >> ./pak101input/autoexec.cfg
+	echo "seta rconpassword \"$rconPassword\"" >> ./scripts/default.txt
 fi	
 
-zip ./pak101input/autoexec.pk3 ./pak101input/autoexec.cfg
-rm -f ./pak101input/autoexec.cfg
+zip ../pak101input/autoexec.pk3 ./scripts/default.txt
+rm -f ./scripts/*
+rmdir ./scripts
+cd ..
 
 #Merge baseq3 paks 100 & 101 (Directly in html-folder) (create backup for future updates)
 mkdir ./paks
-mkdir ./temp
+
 cp /var/www/html/assets/baseq3/*pak10* ./paks 
 
 ./scripts/mergeScript2.sh ./paks/*pak100.pk3 
