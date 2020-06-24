@@ -4,7 +4,20 @@ then
 	echo "Please run as root (with sudo) since we need to install some tools with apt, create a new user and adjust the files in the Apache html folder..." 
 	exit 1 
 fi
-echo "userID: $(id -u)"
+echo "In order to use the Q3A Demo to run your server you must agree to id Software's EULA\n\n"
+cat ./idSoftwareEULA
+
+while : 
+do
+	read -p "\nDo you agree to the EULA? (y/n): "  agree
+
+	case $agree in
+  	  y*|Y*) break ;;
+  	  n*|N*) exit 1 ;;
+	esac
+	
+done
+
 DIR="$(pwd)"
 chmod +x ./scripts/*.sh
 #Read config here
