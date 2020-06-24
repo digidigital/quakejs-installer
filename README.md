@@ -46,7 +46,7 @@ sudo ./startscript.sh
 DONE! Open a supported browser and open http://127.0.0.1
 
 ## Customize your server
-If you have followed the steps above you have created a very basic Q3A-Server. Before opyu run the installer you can easily customize your server by changing the settings in the installerconfig.cfg, simply dropping files in the appropriate folders or even preparing URL-lists with ZIP-files (e. g. containing maps, skins or texture packs) that are automatically downloaded for you.
+If you have followed the steps above you have created a very basic Q3A-Server. Before you run the installer you can easily customize your server by changing the settings in the installerconfig.cfg, by simply dropping files in the appropriate folders or even preparing URL-lists with ZIP-files (e. g. containing maps, skins or texture packs) that are automatically downloaded for you.
 
 ### installerconfig.cfg
 First you should open the *installerconfig.cfg* and change the settings as needed. 
@@ -75,6 +75,10 @@ You can add URLs to the files in the *downloadlists* folder. One URL in each lin
 * Create start-scripts for mod-folders (Currently only CPMA)
 * Create a stop-script
 * Add support for mods (maybe... QuakeJS.com runs TF so that might work)
+
+## Troubleshooting tips / known issues
+
+* ...
 
 ## Thanks ;)
 
