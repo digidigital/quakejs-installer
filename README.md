@@ -58,7 +58,9 @@ nano ./installerconfig.sh
 Just put the map .pk3-file in the *customQ3maps* folder. If your map comes with a separate .pk3-file for additional assets (music, models or textures) merge the pk3-files or put the additional files in the *pak100input* or *pak101input* folders.  
 
 ### How to add models, skins, sounds, texture packs 
-Put the pk3-files in *pak100input* or *pak101input* folders. Size is limited. If pak100 or pak101 are not loaded by the browser you can try to remove some files from the input folders. 
+Put the pk3-files in *pak100input* or *pak101input* folders. Size is limited. If pak100 or pak101 are not loaded by the browser you can try to remove some files from the input folders. In general it is a good idea to add missing textures only instead of using a complete texture pack (e.g. high-res). Smaller files speed up loading times. This can improve the user experiece over Wifi networks or when the user has a slow internet connection.  
+
+An example for custom sounds are the qualityannouncer sounds that are played when you press 'h'. They have been zipped to the qualityannouncer.pk3-file that is located in the *pak101input* folder and are referenced in the qualitytoggle.cfg in the *autoexec* folder.
 
 ### Adjust default key-bindings
 Apply your changes to the cfg-files in the *autoexec* folder. You can add your own scripts as well. The installer merges all the scripts into one large script. It will be executed when the player joins your server.
@@ -68,10 +70,11 @@ You can add URLs to the files in the *downloadlists* folder. One URL in each lin
 
 ## Things that can be improved
 
-* Add a script to to update configuration, maps and mapcycle without the need to run setup from scratch 
-* Add the Q3A-Demo maps to the mapcycle 
-* Create start-scripts for mod-folders
+* Add a script (or parameter) to to update configuration, maps and mapcycle without the need to run setup from scratch 
+* Add the Q3A-Demo maps in pak0.pk3 to the automatically created mapcycle 
+* Create start-scripts for mod-folders (Currently only CPMA)
 * Create a stop-script
+* Add support for mods (maybe... QuakeJS.com runs TF so that might work)
 
 ## Thanks ;)
 
