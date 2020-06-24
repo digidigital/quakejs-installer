@@ -88,12 +88,12 @@ You can add URLs to the files in the *downloadlists* folder. One URL in each lin
 
 A big thanks goes to 
 
-@inolen -> https://github.com/inolen/quakejs
+@inolen -> https://github.com/inolen/quakejs for starting quakejs
 
-@begleysm -> https://github.com/begleysm/quakejs
+@begleysm -> https://github.com/begleysm/quakejs for his great tutorials
 
-@treyyoder -> https://github.com/treyyoder/quakejs-docker
+@treyyoder -> https://github.com/treyyoder/quakejs-docker for the "fix" in ioq3ded.js and the idea to automate the install process
 
-@Grabisoft -> https://github.com/grabisoft
+@Grabisoft -> https://github.com/grabisoft for his tutorial on how to manipulate the pk3s
 
 This installer is inspired and based on their work, research and motivation to keep quakejs alive ;)
