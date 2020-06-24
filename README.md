@@ -6,6 +6,8 @@ Feature list:
 * Creates a separate user
 * Many settings can be adjusted by simply applying changes to a config file
 * Adds the BFG10, grenade launcher and replaces the machine gun
+* Adds random 'funny' player names
+* Adds random player model selection
 * Replaces the broken wearoff sound with silence 
 * Simply drop your custom maps and additional assets in folders
 * Checksums get calculated automatically
