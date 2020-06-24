@@ -92,4 +92,4 @@ A big thanks goes to
 
 @Grabisoft -> https://github.com/grabisoft
 
-This installer is inspired and based on their work, research and willingness to keep quakejs alive ;)
+This installer is inspired and based on their work, research and motivation to keep quakejs alive ;)
