@@ -76,8 +76,12 @@ You can add URLs to the files in the *downloadlists* folder. One URL in each lin
 ## Thanks ;)
 
 A big thanks goes to 
+
 @inolen -> https://github.com/inolen/quakejs
+
 @begleysm -> https://github.com/begleysm/quakejs
+
 @treyyoder -> https://github.com/treyyoder/quakejs-docker
+
 @Grabisoft -> https://github.com/grabisoft
 This installer is inspired and based on their work, research and willingness to keep quakejs alive ;)
