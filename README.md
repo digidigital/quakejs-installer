@@ -84,4 +84,5 @@ A big thanks goes to
 @treyyoder -> https://github.com/treyyoder/quakejs-docker
 
 @Grabisoft -> https://github.com/grabisoft
+
 This installer is inspired and based on their work, research and willingness to keep quakejs alive ;)
