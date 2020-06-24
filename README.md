@@ -5,7 +5,9 @@ Feature list:
 * Installs all necessary tools
 * Creates a separate user
 * Many settings can be adjusted by simply applying changes to a config file
-* Drop your maps and additional assets in folders
+* Adds the BFG10, grenade launcher and replaces the machine gun
+* Replaces the broken wearoff sound with silence 
+* Simply drop your custom maps and additional assets in folders
 * Checksums get calculated automatically
 * Mapcycles will be genererated and added to server.cfg-files automatically
 * Support for automated downloads of ZIPed maps and other assets
