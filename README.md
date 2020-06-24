@@ -13,7 +13,7 @@ Feature list:
 * Checksums get calculated automatically
 * Mapcycles will be genererated and added to server.cfg-files automatically
 * Support for automated downloads of ZIPed maps and other assets
-* Customize the default key bindings and add your own scripts
+* Customize the default key bindings and add your own config files
 
 ## Quick-Start
 Install git
