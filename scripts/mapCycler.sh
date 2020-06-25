@@ -8,7 +8,8 @@ declare -a FILELIST
 for file in "$@"; do 
    mapfile="$(basename "$file" .pk3)"
    mapfile="${mapfile##*-}"
-   if [ "$mapfile" != "pak100" ] && [ "$mapfile" != "pak101" ] # ignore pak-files
+   pakidentifier="pak1"
+   if [[ "$mapfile" =~ "$pakidentifier" ]] # ignore pak-files
    then
       FILELIST=("${FILELIST[@]}" "$mapfile")
    fi
