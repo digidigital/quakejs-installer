@@ -183,6 +183,7 @@ do
 	echo "seta sv_maxclients $maxclients" >> $serverconfig
 	# create mapcycles TODO: if custoMapsOnly =0 include the maps in pak0 in mapcycle
 	./scripts/mapCycler.sh $(ls /var/www/html/assets/$(basename --suffix=".cfg" $serverconfig)/*.pk3) >> $serverconfig
+	ls /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig) || mkdir /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)
 	mv -f $serverconfig /home/$createUser/quakejs/base/$(basename --suffix=".cfg" $serverconfig)/server.cfg
 done
 
