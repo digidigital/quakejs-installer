@@ -88,7 +88,11 @@ add this line
 ```
 @reboot  /home/quake/quakejs/startscript.sh
 ```
-
+### server.cfg
+If you want change setting in your server.cfg after the game was installed just open the file and apply the changes...
+```
+nano  /home/quake/quakejs/base/baseq3/server.cfg
+```
 ## Things that can be improved
 
 * Add a script (or parameter) to to update configuration, maps and mapcycle without the need to run setup from scratch 
