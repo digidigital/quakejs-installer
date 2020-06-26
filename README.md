@@ -47,7 +47,11 @@ Start your server:
 cd /home/quake/quakejs/ 
 sudo ./startscript.sh
 ```
-
+Stop your server:
+```
+cd /home/quake/quakejs/ 
+sudo ./stopscript.sh
+```
 DONE! Open a supported browser and open http://127.0.0.1
 
 ## Customize your server
@@ -58,7 +62,8 @@ First you should open the *installerconfig.cfg* and change the settings as neede
 ```
 nano ./installerconfig.sh
 ```
-You should replace 127.0.0.1 with the IP or name of your comupter (or domainname)!
+* You should replace 127.0.0.1 with the IP or name of your comupter (or domainname)!
+* Set a RCON-Password!
 
 ### How to add maps
 Just put the map .pk3-file in the *customQ3maps* folder. If your map comes with a separate .pk3-file for additional assets (music, models or textures) merge the pk3-files or put the additional files in the *pak100input* or *pak101input* folders.  
@@ -74,17 +79,26 @@ Apply your changes to the cfg-files in the *autoexec* folder. You can add your o
 ### Automatic downloads
 You can add URLs to the files in the *downloadlists* folder. One URL in each line. It is important that the pk3-files are int he top level of the ZIP-file. In the case of maps only ZIP-files that contain map-pk3-files are supported (Otherwise the additional pk3s are treated as maps and will be added to the mapcycle). 
 
+### Start server after reboots
+Simply put the startscript in the root crontab. It will start the server with the quake user.
+```
+sudo crontab -e
+```
+add this line
+```
+@reboot  /home/quake/quakejs/startscript.sh
+```
+
 ## Things that can be improved
 
 * Add a script (or parameter) to to update configuration, maps and mapcycle without the need to run setup from scratch 
 * Add the Q3A-Demo maps in pak0.pk3 to the automatically created mapcycle 
-* Create start-scripts for mod-folders (Currently only CPMA)
-* Create a stop-script
+* Create start-scripts for mod-folders 
 * Add support for mods (maybe... QuakeJS.com runs TF so that might work)
 
 ## Troubleshooting tips / known issues
 
-* ...
+* Security - The quakeJS-nodeJS code is old and seems to have some vulnerabilities. Run this over the internet at your own risk! 
 
 ## Thanks ;)
 
