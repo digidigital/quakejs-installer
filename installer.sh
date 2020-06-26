@@ -201,4 +201,4 @@ echo "su - quake -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $serve
 
 chmod +x /home/$createUser/quakejs/startscript.sh
 
-echo "If there was no error your server should be ready ;)"
+echo "Now cd to /home/$createUser/quakejs and run sudo ./startscript.sh"
