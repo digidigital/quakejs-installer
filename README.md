@@ -1,15 +1,16 @@
-# quakejs-installer
+# quakejs-installer (all padman edition)
 The goal of this project is to make installing your own quakejs-server easy :)
 
 Feature list:
+* Preconfigured to download (almost) all available padmaps & padmodels (padgarden and padgallery have two versions that can't be installed at once since the .bsps replace each other) 
 * Installs all necessary tools
 * Creates a separate user
 * Many settings can be adjusted by simply applying changes to a config file
 * Adds the BFG10, grenade launcher and replaces the machine gun
-* Adds random 'funny' player names
-* Adds random player model selection
+* Adds random 'funny' pad names
+* Adds random pad model selection
 * Replaces the broken wearoff sound with silence 
-* Simply drop your custom maps and additional assets in folders
+* Simply drop pk3s of your custom maps and additional assets in folders
 * Checksums get calculated automatically
 * Mapcycles will be genererated and added to server.cfg-files automatically
 * Support for automated downloads of ZIPed maps and other assets
@@ -23,7 +24,7 @@ sudo apt-get install git
 
 To install the server locally (127.0.0.1) simply clone this repository with:
 ```
-git clone https://github.com/digidigital/quakejs-installer.git
+git clone --single-branch --branch all-padman-edition https://github.com/digidigital/quakejs-installer.git
 ```
 
 cd into the cloned repository: 
@@ -57,6 +58,7 @@ First you should open the *installerconfig.cfg* and change the settings as neede
 ```
 nano ./installerconfig.sh
 ```
+You should replace 127.0.0.1 with the IP or name of your comupter (or domainname)!
 
 ### How to add maps
 Just put the map .pk3-file in the *customQ3maps* folder. If your map comes with a separate .pk3-file for additional assets (music, models or textures) merge the pk3-files or put the additional files in the *pak100input* or *pak101input* folders.  
@@ -95,5 +97,7 @@ A big thanks goes to
 @treyyoder -> https://github.com/treyyoder/quakejs-docker for the "fix" in ioq3ded.js and the idea to automate the install process
 
 @Grabisoft -> https://github.com/grabisoft for his tutorial on how to manipulate the pk3s
+
+Andreas Endres (ENTE) -> https://worldofpadman.net/ for creating world of padman :)
 
 This installer is inspired and based on their work, research and motivation to keep quakejs alive ;)
