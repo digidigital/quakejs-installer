@@ -199,6 +199,10 @@ chown -R $createUser:$createUser /home/$createUser/*
 echo "#!/bin/bash" > /home/$createUser/quakejs/startscript.sh
 echo "su - quake -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $serverPort +set net_ip $serverAddress +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> /home/$createUser/quakejs/startscript.sh
 
-chmod +x /home/$createUser/quakejs/startscript.sh
+#create stopscript
+echo "#!/bin/bash" > /home/$createUser/quakejs/stopscript.sh
+echo "pkill -U $createUser" >> /home/$createUser/quakejs/stopscript.sh
+
+chmod +x /home/$createUser/quakejs/*script.sh
 
 echo "Now cd to /home/$createUser/quakejs and run sudo ./startscript.sh"
