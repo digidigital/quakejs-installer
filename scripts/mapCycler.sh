@@ -11,6 +11,8 @@ for file in "$@"; do
    pakidentifier="pak1"
    if [[ "$mapfile" =~ "$pakidentifier" ]] # ignore pak-files
    then
+      echo "//$mapfile was found but not added to mapcycle"
+   else
       FILELIST=("${FILELIST[@]}" "$mapfile")
    fi
 done
