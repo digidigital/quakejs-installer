@@ -68,7 +68,7 @@ sed -i "s/SERVERPORT/${serverPort}/g" /var/www/html/index.html
 
 if [ $funnyNames = 0 ]
 then
-	sed -i "s/, '+name', playername//g" /var/www/html/index.html
+	sed -i "s/, '+name', padname//g" /var/www/html/index.html
 fi
 
 if [ $randomModels = 0 ]
