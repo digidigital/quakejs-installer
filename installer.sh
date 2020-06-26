@@ -99,6 +99,13 @@ nan
 # Customization #
 #################
 mkdir ./temp
+#Run user defined scripts...
+chmod +x ./userscripts/*
+for userscript in ./userscripts/*.sh
+do
+	$userscript
+done
+
 #Has the user defined custom downloads? 
 if [ $downloadLists = 1 ]
   then 
