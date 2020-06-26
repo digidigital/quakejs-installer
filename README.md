@@ -79,7 +79,7 @@ Apply your changes to the cfg-files in the *autoexec* folder. You can add your o
 ### Automatic downloads
 You can add URLs to the files in the *downloadlists* folder. One URL in each line. It is important that the pk3-files are int he top level of the ZIP-file. In the case of maps only ZIP-files that contain map-pk3-files are supported (Otherwise the additional pk3s are treated as maps and will be added to the mapcycle). 
 
-### Start server after reboots
+### Start server after reboot
 Simply put the startscript in the root crontab. It will start the server with the quake user.
 ```
 sudo crontab -e
