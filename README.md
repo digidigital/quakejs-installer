@@ -49,6 +49,12 @@ sudo ./startscript.sh
 
 DONE! Open a supported browser and open http://127.0.0.1
 
+Stop your server:
+```
+cd /home/quake/quakejs/ 
+sudo ./stopscript.sh
+```
+
 ## Customize your server
 If you have followed the steps above you have created a very basic Q3A-Server. Before you run the installer you can easily customize your server by changing the settings in the installerconfig.cfg, by simply dropping files in the appropriate folders or even preparing URL-lists with ZIP-files (e. g. containing maps, skins or texture packs) that are automatically downloaded for you.
 
@@ -72,12 +78,30 @@ Apply your changes to the cfg-files in the *autoexec* folder. You can add your o
 ### Automatic downloads
 You can add URLs to the files in the *downloadlists* folder. One URL in each line. It is important that the pk3-files are int he top level of the ZIP-file. In the case of maps only ZIP-files that contain map-pk3-files are supported (Otherwise the additional pk3s are treated as maps and will be added to the mapcycle). 
 
+### User defined scripts
+Add your own .sh-scripts to the *userscripts* folder. They will be executed after the base installation is complete and the assets have been downloaded from content.quakejs.com 
+
+### Start server after reboot
+Simply put the startscript in the root crontab. It will start the server with the quake user.
+```
+sudo crontab -e
+```
+add this line
+```
+@reboot  /home/quake/quakejs/startscript.sh
+```
+### server.cfg
+If you want change setting in your server.cfg after the game was installed just open the file and apply the changes...
+```
+nano  /home/quake/quakejs/base/baseq3/server.cfg
+```
 ## Things that can be improved
 
 * Add a script (or parameter) to to update configuration, maps and mapcycle without the need to run setup from scratch 
 * Add the Q3A-Demo maps in pak0.pk3 to the automatically created mapcycle 
-* Create start-scripts for mod-folders (Currently only CPMA)
-* Create a stop-script
+* Create start-scripts for mod-folders
+* ~~Create a stop-script~~ Done!
+* ~~User defined scripts~~ Done!
 * Add support for mods (maybe... QuakeJS.com runs TF so that might work)
 
 ## Troubleshooting tips / known issues
