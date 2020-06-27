@@ -1,0 +1,15 @@
+#!/bin/bash
+# In case content.quakejs.com is down and you do not find a content server
+mkdir /var/www/html/assets
+mkdir /var/www/html/assets/baseq3
+wget -P "./temp/" --progress=bar https://ftp.gwdg.de/pub/misc/ftp.idsoftware.com/idstuff/quake3/linux/linuxq3ademo-1.11-6.x86.gz.sh
+wget -P "./temp/" --progress=bar https://ftp.gwdg.de/pub/misc/ftp.idsoftware.com/idstuff/quake3/linux/linuxq3apoint-1.32b-3.x86.run
+./scripts/crcRename.sh ./temp/*
+mv -f ./temp/* /var/www/html/assets/
+touch ./temp/empty
+cd ./temp
+zip ./pak100.pk3 ./empty
+cp ./pak100.pk3 ./pak101.pk3 
+cd ..
+./scripts/crcRename.sh ./temp/*
+mv -f ./temp/* /var/www/html/assets/baseq3
