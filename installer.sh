@@ -94,7 +94,7 @@ if [ $customMapsOnly = 1 ]
   then 
   find /var/www/html/assets/baseq3 -type f -not -name '*pak10*' -print0 | xargs -0 -I {} rm {}
 fi
-nan
+
 #################
 # Customization #
 #################
