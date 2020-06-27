@@ -47,12 +47,13 @@ Start your server:
 cd /home/quake/quakejs/ 
 sudo ./startscript.sh
 ```
+DONE! Open a supported browser and open http://127.0.0.1
+
 Stop your server:
 ```
 cd /home/quake/quakejs/ 
 sudo ./stopscript.sh
 ```
-DONE! Open a supported browser and open http://127.0.0.1
 
 ## Customize your server
 If you have followed the steps above you have created a very basic Q3A-Server. Before you run the installer you can easily customize your server by changing the settings in the installerconfig.cfg, by simply dropping files in the appropriate folders or even preparing URL-lists with ZIP-files (e. g. containing maps, skins or texture packs) that are automatically downloaded for you.
