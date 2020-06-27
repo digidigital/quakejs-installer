@@ -9,7 +9,8 @@ mv -f ./temp/* /var/www/html/assets/
 touch ./temp/empty
 cd ./temp
 zip ./pak100.pk3 ./empty
-cp ./pak100.pk3 ./pak101.pk3 
+cp ./pak100.pk3 ./pak101.pk3
+rm ./empty
 cd ..
 ./scripts/crcRename.sh ./temp/*
 mv -f ./temp/* /var/www/html/assets/baseq3
