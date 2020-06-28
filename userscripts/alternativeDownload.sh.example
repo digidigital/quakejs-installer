@@ -1,11 +1,20 @@
 #!/bin/bash
-# In case content.quakejs.com is down and you do not find a content server
+# In case content.quakejs.com is down and you do not find a content server.
+# Rename so the file extension is ".sh" and this script will be executed
 mkdir /var/www/html/assets
 mkdir /var/www/html/assets/baseq3
 wget -P "./temp/" --progress=bar https://ftp.gwdg.de/pub/misc/ftp.idsoftware.com/idstuff/quake3/linux/linuxq3ademo-1.11-6.x86.gz.sh
+mv ./temp/linuxq3ademo-1.11-6.x86.gz.sh ./temp/linuxq3ademo-1.11-6.x86.gz.sh.pk3 #crcRename currently only renames files with pk3 extension
 wget -P "./temp/" --progress=bar https://ftp.gwdg.de/pub/misc/ftp.idsoftware.com/idstuff/quake3/linux/linuxq3apoint-1.32b-3.x86.run
+mv ./temp/linuxq3apoint-1.32b-3.x86.run ./temp/linuxq3apoint-1.32b-3.x86.run.pk3 ##crcRename currently only renames files with pk3 extension
 ./scripts/crcRename.sh ./temp/*
+for file in ./temp/*
+do
+  mv "${file}" "$(dirname $file)/$(basename $file .pk3)"
+done
 mv -f ./temp/* /var/www/html/assets/
+
+#Create dummy pk100 and pk101...
 touch ./temp/empty
 cd ./temp
 zip ./pak100.pk3 ./empty
