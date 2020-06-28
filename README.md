@@ -14,6 +14,7 @@ Feature list:
 * Mapcycles will be genererated and added to server.cfg-files automatically
 * Support for automated downloads of ZIPed maps and other assets
 * Customize the default key bindings and add your own config files
+* Alternative download script in case content.quakejs.com is down and you can't download the Q3A demo files
 
 ## Quick-Start
 Install git
@@ -106,7 +107,8 @@ nano  /home/quake/quakejs/base/baseq3/server.cfg
 
 ## Troubleshooting tips / known issues
 
-* ...
+* In case content.quakejs.com is down and you can't download the demo files just rename the *alternativeDownload.sh.example* in the *userscripts* folder so it has the file extension *.sh*
+*  If you have alot of missing textures press "l" and check the console for textures that are labelled as 'DEFAULTED' Just create a .pk3 with the missing textures (take them from e.g. openarena and preserve the paths when zipping e.g. /textures/base_trim/texturename.tga) and put the *.pk3* in *pk101input* folder. Creating a .pk3-file is easy - it is just a zip-file with the file extension *.zip* changed to *.pk3*
 
 ## Thanks ;)
 
