@@ -81,6 +81,7 @@ You can add URLs to the files in the *downloadlists* folder. One URL in each lin
 
 ### User defined scripts
 Add your own .sh-scripts to the *userscripts* folder. They will be executed after the base installation is complete and the assets have been downloaded from content.quakejs.com 
+Only files with the extension *.sh* will be treated as scripts.
 
 ### Start server after reboot
 Simply put the startscript in the root crontab. It will start the server with the quake user.
