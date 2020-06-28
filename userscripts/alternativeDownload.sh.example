@@ -1,7 +1,11 @@
 #!/bin/bash
 # In case content.quakejs.com is down and you do not find a content server.
-# Make sure you have at least one map in the customQ3maps folder or downloads list
 # Rename so the file extension is ".sh" and this script will be executed
+# Make sure you have at least one map in the customQ3maps folder or downloads list
+# If you have alot of missing textures press "l" and check the console for textures that are labelled as 'DEFAULTED'
+# Just create a .pk3 with the missing textures (take them from e.g. openarena and preserve the paths e.g. /textures/base_trim/texturename.tga)
+# and put the pk3 in pk101input folder
+
 mkdir /var/www/html/assets
 mkdir /var/www/html/assets/baseq3
 
