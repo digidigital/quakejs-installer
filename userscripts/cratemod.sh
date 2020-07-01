@@ -1,4 +1,6 @@
 #!/bin/bash
+# Installs the crate mod on your server :)
+
 # unzip mod and move file to assets folder of content server
 unzip -d ./temp ./mods/cratedm3_v1.0.zip cratedm3/pak0.pk3
 
