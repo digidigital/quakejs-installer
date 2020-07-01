@@ -1,4 +1,6 @@
 #!/bin/bash
+# Install the instagib mod on your server
+
 # unzip mod and move file to assets folder of content server
 unzip -d ./temp ./mods/InstaGib129.zip InstaGib129.pk3
 
