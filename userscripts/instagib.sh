@@ -1,6 +1,6 @@
 #!/bin/bash
 # unzip mod and move file to assets folder of content server
-unzip -d ./temp ./mods/InstaGib129.0.zip InstaGib129.pk3
+unzip -d ./temp ./mods/InstaGib129.zip InstaGib129.pk3
 
 mkdir /var/www/html/assets/InstaGib129
 
