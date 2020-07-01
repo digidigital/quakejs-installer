@@ -5,6 +5,7 @@
 #https://www.per-thormann.de/download/sidrial-v1-1/
 #http://bit.ly/2E9dfIZ
 
+#display sidrial license and ask for consent..
 
 # unzip pk3's
 
