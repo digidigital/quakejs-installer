@@ -103,7 +103,7 @@ mkdir ./temp
 chmod +x ./userscripts/*
 for userscript in ./userscripts/*.sh
 do
-	$userscript $createUser
+	$userscript $createUser $serverAddress $serverPort $contentServer
 done
 
 #Has the user defined custom downloads? 
