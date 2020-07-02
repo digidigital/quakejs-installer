@@ -33,7 +33,7 @@ while fuser /var/lib/dpkg/lock >/dev/null 2>&1 ; do
         3 ) j="/" ;;
     esac
     clear
-    echo -en "[$j] Waiting for other software managers to finish..." 
+    echo "[$j] Waiting for other software managers to finish..." 
     sleep 0.2
     i=$((i+1))
 done 
@@ -103,6 +103,7 @@ mkdir ./temp
 chmod +x ./userscripts/*
 for userscript in ./userscripts/*.sh
 do
+        echo "Starting $userscript"
 	$userscript $createUser $serverAddress $serverPort $contentServer
 done
 
