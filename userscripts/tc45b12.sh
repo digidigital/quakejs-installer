@@ -46,3 +46,4 @@ rm ./temp/*
 echo "#!/bin/bash" > /home/$1/quakejs/startq3tc.sh
 echo "su - $1 -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $3 +set net_ip $2 +set fs_game q3tc045 +set fs_cdn $4 +set dedicated 1 +exec q3tc_server.cfg & disown\"" >> /home/$1/quakejs/startq3tc.sh
 
+echo "******Exit True Combat Mod Installer******"
