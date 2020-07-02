@@ -1,5 +1,6 @@
 #!/bin/bash
 # Installs the crate mod on your server :)
+echo "******Cratemod Installer******"
 
 # unzip mod and move file to assets folder of content server
 unzip -d ./temp ./mods/cratedm3_v1.0.zip cratedm3/pak0.pk3
@@ -22,3 +23,5 @@ echo 'vstr d1' >> /home/$1/quakejs/base/cratedm3/crateserver.cfg
 # create start-script
 echo "#!/bin/bash" > /home/$1/quakejs/startcratemod.sh
 echo "su - $1 -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $3 +set net_ip $2 +set fs_game cratedm3 +set fs_cdn $4 +set dedicated 1 +exec crateserver.cfg & disown\"" >> /home/$1/quakejs/startcratemod.sh
+
+echo "******Exit Cratemod Installer******"
