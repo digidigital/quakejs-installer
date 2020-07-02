@@ -206,4 +206,4 @@ echo "pkill -U $createUser" >> /home/$createUser/quakejs/stopscript.sh
 
 chmod +x /home/$createUser/quakejs/*script.sh
 
-echo "Now cd to /home/$createUser/quakejs and run sudo ./startscript.sh"
+echo "Now cd to /home/$createUser/quakejs and run sudo ./startscript.sh or one of the mod startsrcipts :)"
