@@ -4,8 +4,8 @@
 # download - links
 #https://www.per-thormann.de/download/sidrial-v1-1/
 #http://bit.ly/2E9dfIZ
-
 # ask if sidrial should be downloaded + agreee to terms and conditions
+#cat ./userscripts/sidrial-license.txt
 
 # unzip pk3's
 
