@@ -1,11 +1,11 @@
 #!/bin/bash
-# installs the sidrial mod on your server
-# check if sidrial file is in mods folder
-# display download - links
+# downloads installs the sidrial mod on your server
+# 
+# download - links
 #https://www.per-thormann.de/download/sidrial-v1-1/
 #http://bit.ly/2E9dfIZ
 
-#display sidrial license and ask for consent..
+# ask if sidrial should be downloaded + agreee to terms and conditions
 
 # unzip pk3's
 
@@ -17,8 +17,6 @@
 
 # create sidrial folder in server's base folder
 
-# copy server template
+# copy server template no mapcycle since only one mp-map included ;)
 
-# create multiplayer mapcycle and add to cfg
-
-# create launcher
+# create launcher +map sidrialdm1 (has just one map)
