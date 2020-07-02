@@ -3,12 +3,13 @@
 echo "******Cratemod Installer******"
 
 # unzip mod and move file to assets folder of content server
-unzip -d ./temp ./mods/cratedm3_v1.0.zip cratedm3/pak0.pk3
+unzip -j -d ./temp ./mods/cratedm3_v1.0.zip cratedm3/pak0.pk3
 
 mkdir /var/www/html/assets/cratedm3
 
 mv -f ./temp/pak0.pk3 /var/www/html/assets/cratedm3/pak100.pk3 
 
+rm ./temp/*
 # create mod folder in game server's base directory  
 mkdir /home/$1/quakejs/base/cratedm3
 
