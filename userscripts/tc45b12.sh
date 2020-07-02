@@ -16,10 +16,10 @@ done
 wget -P "./temp/" --progress=bar http://tce.merlin1991.at/tc/q3tc0.45b12beta.zip
 
 # unzip pk3s
-unzip -d ./temp ./temp/q3tc0.45b12beta.zip q3tc045/*3
+unzip -j -d ./temp ./temp/q3tc0.45b12beta.zip q3tc045/*3
 
 # unzip cfg
-unzip -d ./temp ./temp/q3tc0.45b12beta.zip q3tc045/q3tc_server.cfg
+unzip -j -d ./temp ./temp/q3tc0.45b12beta.zip q3tc045/q3tc_server.cfg
 
 # create assets folder on content server
 mkdir /var/www/html/assets/q3tc045
