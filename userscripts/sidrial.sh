@@ -44,3 +44,5 @@ cp ./scripts/templates/server.cfg /home/$1/quakejs/base/sidrial/sidrialserver.cf
 # create start-script
 echo "#!/bin/bash" > /home/$1/quakejs/startsidrial.sh
 echo "su - $1 -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $3 +set net_ip $2 +set fs_game sidrial +set fs_cdn $4 +set dedicated 1 +map sidrialdm1 +exec sidrialserver.cfg & disown\"" >> /home/$1/quakejs/startsidrial.sh
+
+echo "******Exit Sidrial Total Conversion Installer******"
