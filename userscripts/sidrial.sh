@@ -42,8 +42,13 @@ mkdir /home/$1/quakejs/base/sidrial
 #  # copy standard server template cfg. no mapcycle since only one mp-map is included ;)
 cp ./scripts/templates/server.cfg /home/$1/quakejs/base/sidrial/sidrialserver.cfg
 
+echo "seta bot_enable 1" >> /home/$1/quakejs/base/sidrial/sidrialserver.cfg
+echo "seta bot_minPlayers 4" >> /home/$1/quakejs/base/sidrial/sidrialserver.cfg
+echo 'seta rconpassword ""' >> /home/$1/quakejs/base/sidrial/sidrialserver.cfg  
+
 # create start-script
 echo "#!/bin/bash" > /home/$1/quakejs/startsidrial.sh
 echo "su - $1 -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $3 +set net_ip $2 +set fs_game sidrial +set fs_cdn $4 +set dedicated 1 +map sidrialdm1 +exec sidrialserver.cfg & disown\"" >> /home/$1/quakejs/startsidrial.sh
 
+echo "Sidrial server config location: /home/$1/quakejs/base/sidrial/sidrialserver.cfg"
 echo "******Exit Sidrial Total Conversion Installer******"
