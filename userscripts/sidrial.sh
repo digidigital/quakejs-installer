@@ -8,6 +8,7 @@
 echo "******Sidrial Total Conversion Installer******"
 # ask if sidrial should be downloaded + agreee to terms and conditions
 cat ./userscripts/sidrial-license.txt
+while :
 do
 	read -p "Do you agree to this EULA? Download and install the Total Conversion? (y/n): "  agree
 
