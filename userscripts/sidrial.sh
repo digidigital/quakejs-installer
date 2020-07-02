@@ -21,7 +21,7 @@ done
 wget -P "./temp/" --progress=bar http://www.semaphor.eu/Sidrial_v1.1.zip
 
 # unzip pk3's
-unzip -d ./temp ./temp/Sidrial_v1.1.zip sidrial/*.pk3
+unzip -j -d ./temp ./temp/Sidrial_v1.1.zip sidrial/*.pk3
 
 # create assets folder on content server
 mkdir /var/www/html/assets/sidrial
