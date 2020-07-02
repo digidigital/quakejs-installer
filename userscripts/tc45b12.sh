@@ -3,6 +3,7 @@
 
 echo "******True Combat Mod (Q3TC045) Installer******"
 # ask if mod should be downloaded + agreee to terms and conditions
+while :
 do
 	read -p "Download and install external file? (y/n): "  agree
 
