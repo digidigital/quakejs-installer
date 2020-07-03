@@ -198,14 +198,17 @@ done
 
 chown -R $createUser:$createUser /home/$createUser/*
 
-#create start-script
+#create start-scripts
 echo "#!/bin/bash" > /home/$createUser/quakejs/startscript.sh
 echo "su - quake -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $serverPort +set net_ip $serverAddress +set fs_game baseq3 +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> /home/$createUser/quakejs/startscript.sh
+
+echo "#!/bin/bash" > /home/$createUser/quakejs/startcpma.sh
+echo "su - quake -c \"cd ~/quakejs && node build/ioq3ded.js +set net_port $serverPort +set net_ip $serverAddress +set fs_game cpma +set fs_cdn '${contentServer}' +set dedicated 1 +exec server.cfg & disown\"" >> /home/$createUser/quakejs/startcpma.sh
 
 #create stopscript
 echo "#!/bin/bash" > /home/$createUser/quakejs/stopscript.sh
 echo "pkill -U $createUser" >> /home/$createUser/quakejs/stopscript.sh
 
-chmod +x /home/$createUser/quakejs/*script.sh
+chmod +x /home/$createUser/quakejs/*.sh
 
 echo "Now cd to /home/$createUser/quakejs and run sudo ./startscript.sh or one of the mod startsrcipts :)"
