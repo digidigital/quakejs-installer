@@ -63,7 +63,7 @@ If you have followed the steps above you have created a very basic Q3A-Server. B
 ### installerconfig.cfg
 First you should open the *installerconfig.cfg* and change the settings as needed. 
 ```
-nano ./installerconfig.sh
+nano ./installerconfig.cfg
 ```
 
 ### How to add maps
