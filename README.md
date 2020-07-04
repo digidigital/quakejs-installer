@@ -15,7 +15,7 @@ Feature list:
 * Support for automated downloads of ZIPed maps and other assets
 * Customize the default key bindings and add your own config files
 * Alternative download script in case content.quakejs.com is down and you can't download the Q3A demo files (userscripts folder)
-* Comes with scripts to install Instagib, CrateDM, CZ45qomical, CZ45q3agm2019 and Sidrial mods (userscripts folder) in addition to CPMA
+* Comes with scripts to install Instagib, CrateDM, CZ45qomical, CZ45q3agm2019, 24h-Mod, Excessive+ and Sidrial mods (userscripts folder) in addition to CPMA
 
 ## Quick-Start
 Install git
@@ -140,5 +140,7 @@ A big thanks goes to
 @treyyoder -> https://github.com/treyyoder/quakejs-docker for the "fix" in ioq3ded.js and the idea to automate the install process
 
 @Grabisoft -> https://github.com/grabisoft for his tutorial on how to manipulate the pk3s
+
+The guys that created the mods...
 
 This installer is inspired and based on their work, research and motivation to keep quakejs alive ;)
