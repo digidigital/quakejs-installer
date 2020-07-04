@@ -14,7 +14,8 @@ Feature list:
 * Mapcycles will be genererated and added to server.cfg-files automatically
 * Support for automated downloads of ZIPed maps and other assets
 * Customize the default key bindings and add your own config files
-* Alternative download script in case content.quakejs.com is down and you can't download the Q3A demo files
+* Alternative download script in case content.quakejs.com is down and you can't download the Q3A demo files (userscripts folder)
+* Comes with scripts to install Instagib, CrateDM and Sidrial mods (userscripts folder) in addition to CPMA
 
 ## Quick-Start
 Install git
@@ -62,7 +63,7 @@ If you have followed the steps above you have created a very basic Q3A-Server. B
 ### installerconfig.cfg
 First you should open the *installerconfig.cfg* and change the settings as needed. 
 ```
-nano ./installerconfig.sh
+nano ./installerconfig.cfg
 ```
 
 ### How to add maps
@@ -101,14 +102,21 @@ nano  /home/quake/quakejs/base/baseq3/server.cfg
 
 * Add a script (or parameter) to to update configuration, maps and mapcycle without the need to run setup from scratch 
 * Add the Q3A-Demo maps in pak0.pk3 to the automatically created mapcycle 
-* Create start-scripts for mod-folders
+* ~~Create start-scripts for mod-folders~~ Done!
 * ~~Create a stop-script~~ Done!
 * ~~User defined scripts~~ Done!
-* Add support for mods (maybe... QuakeJS.com runs TF so that might work)
+* ~~Add support for mods~~ Done!
+
+## Security concerns / Disclaimer
+
+a) This scripts is executed with root privileges and will download and install files from various souces that are not under my control.
+b) Nodejs warns you that parts of quakeJS contain security issues.
+
+Therefore you should not run this script on a production machine, a company network or a public webserver if you don't know exactly what you are doing!  
 
 ## Troubleshooting tips / known issues
 
-* In case content.quakejs.com is down and you can't download the demo files just rename the *alternativeDownload.sh.example* in the *userscripts* folder so it has the file extension *.sh*
+* In case content.quakejs.com is down and you can't download the demo files just rename the *alternativeDownload.sh.example* in the *userscripts* folder so it has the file extension *.sh* In *installerconfig.cfg* set *userscripts=1*
 *  If you have alot of missing textures press "l" and check the console for textures that are labelled as 'DEFAULTED' Just create a .pk3 with the missing textures (take them from e.g. openarena and preserve the paths when zipping e.g. /textures/base_trim/texturename.tga) and put the *.pk3* in *pk101input* folder. Creating a .pk3-file is easy - it is just a zip-file with the file extension *.zip* changed to *.pk3*
 
 ## Thanks ;)
