@@ -127,7 +127,7 @@ Therefore you should not run this script on a production machine, a company netw
 ## Troubleshooting tips / known issues
 
 * In case content.quakejs.com is down and you can't download the demo files just rename the *alternativeDownload.sh.example* in the *userscripts* folder so it has the file extension *.sh* In *installerconfig.cfg* set *userscripts=1*
-*  If you have alot of missing textures press "l" and check the console for textures that are labelled as 'DEFAULTED' Just create a .pk3 with the missing textures (take them from e.g. openarena and preserve the paths when zipping e.g. /textures/base_trim/texturename.tga) and put the *.pk3* in *pk101input* folder. Creating a .pk3-file is easy - it is just a zip-file with the file extension *.zip* changed to *.pk3*
+*  If you have alot of missing textures press "l" (small L) and check the console for textures that are labelled as 'DEFAULTED' Just create a .pk3 with the missing textures (take them from e.g. openarena and preserve the paths when zipping e.g. /textures/base_trim/texturename.tga) and put the *.pk3* in *pk101input* folder. Creating a .pk3-file is easy - it is just a zip-file with the file extension *.zip* changed to *.pk3*
 
 ## Thanks ;)
 
