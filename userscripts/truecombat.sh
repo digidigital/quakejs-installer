@@ -7,7 +7,7 @@ echo "******TrueCombat Installer******"
 wget -P "./mods/" --progress=bar http://tce.merlin1991.at/tc/TrueCombat11Full.zip
 
 # unzip pk3's
-unzip -j -d ./temp ./mods/TrueCombat11Full.zip /truecombat/*.pk3
+unzip -j -d ./temp ./mods/TrueCombat11Full.zip truecombat/*.pk3
 
 # create assets folder on content server
 mkdir /var/www/html/assets/truecombat
