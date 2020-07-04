@@ -16,7 +16,10 @@ mv -f ./temp/excessiveplus/z-xp-2_3.pk3 /var/www/html/assets/excessiveplus/pak10
 chmod +r /var/www/html/assets/excessiveplus/*
 
 #move mod folder in game server's base directory  
-mv -f ./temp/excessiveplus /home/$1/quakejs/base/
+cd ./temp
+mv -f ./excessiveplus /home/$1/quakejs/base/
+rm -R excessiveplus 
+cd ..
 mv -f /home/$1/quakejs/base/excessiveplus/server.cfg /home/$1/quakejs/base/excessiveplus/epserver.cfg
 
 # create start-script
