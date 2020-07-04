@@ -119,10 +119,10 @@ nano  /home/quake/quakejs/base/baseq3/server.cfg
 
 ## Security concerns / Disclaimer
 
-a) This scripts is executed with root privileges and will download and install files from various souces that are not under my control.
-b) Nodejs warns you that parts of quakeJS contain security issues.
+* The scripts is executed with root privileges and will download and install files from various souces that are not under my control.
+* Nodejs warns you that parts of quakeJS contain security issues.
 
-Therefore you should not run this script on a production machine, a company network or a public webserver if you don't know exactly what you are doing!  
+Therefore you should not run this script on a production machine, a company network or a public webserver if you don't exactly know what you are doing!  
 
 ## Troubleshooting tips / known issues
 
