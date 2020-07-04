@@ -81,7 +81,7 @@ Add your own .sh-scripts to the *userscripts* folder. They will be executed afte
 - Only files with the extension *.sh* will be treated as scripts.
 
 ### How to add mods
-You need to write a script in order to install mods. Just use the examples in the *userscripts* folder as templates. 
+You need to write a script in order to install mods. Just use the examples in the *userscripts* folder as templates. Don't forget to set *userscipts=1* in *installerconfig.cfg*
 
 The basic steps are:
 * (optional) Download mod
