@@ -15,7 +15,7 @@ Feature list:
 * Support for automated downloads of ZIPed maps and other assets
 * Customize the default key bindings and add your own config files
 * Alternative download script in case content.quakejs.com is down and you can't download the Q3A demo files (userscripts folder)
-* Comes with scripts to install Instagib, CrateDM and Sidrial mods (userscripts folder) in addition to CPMA
+* Comes with scripts to install Instagib, CrateDM, CZ45qomical, CZ45q3agm2019 and Sidrial mods (userscripts folder) in addition to CPMA
 
 ## Quick-Start
 Install git
