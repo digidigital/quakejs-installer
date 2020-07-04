@@ -95,7 +95,7 @@ The basic steps are:
 * (optional) In case you see a lot of missing textures and you do not want to add them to the base game paks simply put them in a separate pak and put them in the mod folder of the content server (example in *cratemod.sh*) 
 
 ### Start server after reboot
-Simply put the startscript in the root crontab. It will start the server with the quake user.
+Simply put one of the startscripts in the root crontab. It will start the server with the quake user.
 ```
 sudo crontab -e
 ```
