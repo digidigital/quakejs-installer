@@ -81,8 +81,6 @@ a2enmod rewrite
 a2enmod headers
 cp -f ./scripts/templates/htaccess /var/www/html/.htaccess
 
-#funny names, random models, and server info for index.hml here 
-
 #Get assets from quakejs-content server
 ./scripts/get_assets.sh /var/www/html $sourceServer
 
@@ -138,7 +136,7 @@ cd ..
 #Merge baseq3 paks 100 & 101 (Directly in html-folder) (create backup for future updates)
 mkdir ./paks
 
-cp /var/www/html/assets/baseq3/*pak10* ./paks 
+cp -n /var/www/html/assets/baseq3/*pak10* ./paks 
 
 ./scripts/mergeScript2.sh ./paks/*pak100.pk3 
 ./scripts/mergeScript2.sh ./paks/*pak101.pk3 
