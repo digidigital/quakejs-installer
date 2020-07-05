@@ -15,7 +15,7 @@
 # (The script does not work correctly if there are whitespaces in the path)
 # In some cases you might have to put sudo in front of the command if
 # you are not root
-currentDir=pwd
+currentDir="$(pwd)"
 for file in "$@"
 do
   if [[ $file =~ ".pk3" ]]; then
