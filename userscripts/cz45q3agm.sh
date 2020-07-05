@@ -67,7 +67,7 @@ mv -f ./temp/pakcz00* /var/www/html/assets/cz45q3agm/pak100.pk3
 mv -f ./temp/pakcz01* /var/www/html/assets/cz45q3agm/pak101.pk3
 mv -f ./temp/pakcz03* /var/www/html/assets/cz45q3agm/pak102.pk3
 mv -f ./temp/pakcz04* /var/www/html/assets/cz45q3agm/pak103.pk3
-chmod +r /var/www/html/assets/qomical/* 
+chmod +r /var/www/html/assets/cz45q3agm/* 
 
 # create start-script
 echo "#!/bin/bash" > /home/$1/quakejs/startcz45q3agm.sh
