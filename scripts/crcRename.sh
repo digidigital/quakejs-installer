@@ -15,11 +15,14 @@
 # (The script does not work correctly if there are whitespaces in the path)
 # In some cases you might have to put sudo in front of the command if
 # you are not root
-
+currentDir=pwd
 for file in "$@"
 do
-  if [[ $file =~ ".pk3" ]]; then 
-    checksum=$((0x$(crc32 $file)))
+  if [[ $file =~ ".pk3" ]]; then
+    cd "$(dirname $file)" # cd'ing into directory is necessary as workaround because of a bug in crc32 (throws an error in case you have a 8 digit checksum in the filename and use full path)  checksum=$((0x$(crc32 $file))) was so nice :( 
+    # Calculating CRC32 checksum... 
+    checksum=$((0x$(crc32 $(basename $file))))
+    cd "$currentDir"
     base=$(basename $file)
     mv $file "$(dirname $file)/$checksum-${base##*-}" 
   
