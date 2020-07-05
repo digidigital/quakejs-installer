@@ -14,7 +14,7 @@ mv -f ./temp/pak3.pk3 /var/www/html/assets/24h-mod/pak103.pk3
 mv -f ./temp/pak4.pk3 /var/www/html/assets/24h-mod/pak104.pk3 
 
 rm ./temp/*
-
+chmod +r /var/www/html/assets/24h-mod/*
 # create mod folder in game server's base directory  
 mkdir /home/$1/quakejs/base/24h-mod
 
