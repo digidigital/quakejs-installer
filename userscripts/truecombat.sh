@@ -19,6 +19,7 @@ mv -f ./temp/pak2.pk3 /var/www/html/assets/truecombat/pak102.pk3
 mv -f ./temp/map_pak0.pk3 /var/www/html/assets/truecombat/pak103.pk3
 mv -f ./temp/map_pak1.pk3 /var/www/html/assets/truecombat/pak104.pk3
 
+chmod +r /var/www/html/assets/truecombat/*
 # delete files in temp
 rm ./temp/*
 
