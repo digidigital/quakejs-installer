@@ -2,7 +2,9 @@
 # Install the qomical mod on your server
 echo "******CZ45's gameplay mod pack (2019) Installer******"
 # unzip mod and move file to assets folder of content server
-unzip -j -d ./temp ./mods/cz45q3agm2019.zip cz45q3agm/*.pk3
+unzip -j -d ./temp ./mods/cz45q3agm2019.zip cz45q3agm/pakcz00*
+unzip -j -d ./temp ./mods/cz45q3agm2019.zip cz45q3agm/pakcz01*
+unzip -j -d ./temp ./mods/cz45q3agm2019.zip cz45q3agm/pakcz03*
 
 echo "*********Gib & Blood Effects*********"
 echo "1 -> ReadyPlayerOne(film) style coins effect." # "pakcz04coins.pk3"
